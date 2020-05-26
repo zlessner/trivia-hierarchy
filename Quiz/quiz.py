@@ -12,31 +12,30 @@ class Questions:
         ranNumGen = random.random()
         question_value = dict()
 
+        #Goes to geography questions
         if ranNumGen < .5:
             category = self.capital_questions
+            prompt = '''What is the capital of {inquiry}? '''
             answer_value = "Sorry, that answer is incorrect. The capital of {question} is {answer}."
 
+        #Goes to math questions
         else:
             category = self.math_questions
+            prompt='{inquiry}'
             answer_value = "Sorry, that answer is incorrect. {question}={answer}."
 
 
         keys = list(category.keys()) 
 
+        #shuffle questions
         random.shuffle(keys)
 
         for key in keys:
             question_value.update({key:category[key]})
 
 
-        #Capital Questions
-        if ranNumGen < .5:
-            print('''
-            What is the capital of {country}? '''.format(country=next(iter(question_value))))
+        print(prompt.format(inquiry=next(iter(question_value))))
 
-        #Math Questions
-        else:
-            print(next(iter(question_value)))
 
         user_input = input() 
 
