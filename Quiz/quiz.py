@@ -9,6 +9,7 @@ class Questions:
         self.capital_questions = capital_questions
         self.math_questions = math_questions
 
+    def get_question(self):
         ranNumGen = random.random()
         question_value = dict()
 
@@ -33,21 +34,6 @@ class Questions:
         for key in keys:
             question_value.update({key:category[key]})
 
-
-        print(prompt.format(inquiry=next(iter(question_value))))
-
-
-        user_input = input() 
-
-        if user_input.lower() == question_value.get(next(iter(question_value))).lower():
-            print ("You are correct!")
-
-        #Answer is based on what type of question it is    
-        else:
-            print (answer_value.
-            format(question=next(iter(question_value)), 
-            answer=question_value.get(next(iter(question_value)))))
+        return prompt.format(inquiry=next(iter(question_value)))
 
 
-
-run = Questions(capital_questions, math_questions)
