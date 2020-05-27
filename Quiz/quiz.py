@@ -36,4 +36,22 @@ class Questions:
 
         return prompt.format(inquiry=next(iter(question_value)))
 
+'''
+        print(prompt.format(inquiry=next(iter(question_value))))
 
+
+        user_input = input() 
+
+        if user_input.lower() == question_value.get(next(iter(question_value))).lower():
+            print ("You are correct!")
+
+        #Answer is based on what type of question it is    
+        else:
+            print (answer_value.
+            format(question=next(iter(question_value)), 
+            answer=question_value.get(next(iter(question_value)))))
+
+
+
+run = Questions(capital_questions, math_questions)
+'''
