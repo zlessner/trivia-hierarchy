@@ -9,6 +9,7 @@ class Questions:
         self.capital_questions = capital_questions
         self.math_questions = math_questions
 
+    def get_question(self):
         ranNumGen = random.random()
         question_value = dict()
 
@@ -33,7 +34,9 @@ class Questions:
         for key in keys:
             question_value.update({key:category[key]})
 
+        return prompt.format(inquiry=next(iter(question_value)))
 
+'''
         print(prompt.format(inquiry=next(iter(question_value))))
 
 
@@ -51,3 +54,4 @@ class Questions:
 
 
 run = Questions(capital_questions, math_questions)
+'''
